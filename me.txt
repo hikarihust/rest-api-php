@@ -4,4 +4,10 @@
 Make an API call: access an API from PHP
 Decode API results: reading JSON in PHP
 Use API data in a web application
+
+    ================================================================================
+
+                        HTTP basics: requests, responses and using cURL
+
+Use cURL instead of file_get_contents to make an API request
     
