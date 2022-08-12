@@ -2,4 +2,5 @@
                         API basics: what APIs are and how to use them
 
 Make an API call: access an API from PHP
+Decode API results: reading JSON in PHP
     
