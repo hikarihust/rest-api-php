@@ -14,4 +14,5 @@ Response codes: get the HTTP status code
 Request headers: add meta data about the request
 Response headers: read meta data about the response
 Get all individual response headers in an array
+Use an API that requires a specific request header
     
