@@ -17,4 +17,11 @@ Get all individual response headers in an array
 Use an API that requires a specific request header
 Request method: change the method to get a different result with the same URL
 Request body: add a payload to send data along with the request
+
+    ================================================================================
+
+                        REST and RESTful APIs: using them from PHP
+            
+REST and RESTful APIs: what are they?
+Access a RESTful API in PHP with cURL
     
