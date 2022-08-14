@@ -25,4 +25,5 @@ Request body: add a payload to send data along with the request
 REST and RESTful APIs: what are they?
 Access a RESTful API in PHP with cURL
 Use the Guzzle HTTP client for object-oriented API code
+Use an SDK: compare the Stripe API to its SDK
     
