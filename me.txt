@@ -26,4 +26,10 @@ REST and RESTful APIs: what are they?
 Access a RESTful API in PHP with cURL
 Use the Guzzle HTTP client for object-oriented API code
 Use an SDK: compare the Stripe API to its SDK
+
+    ================================================================================
+
+                    Create a RESTful API: build a framework for serving the API
+
+Start writing the API: enable URL rewriting
     
