@@ -32,4 +32,5 @@ Use an SDK: compare the Stripe API to its SDK
                     Create a RESTful API: build a framework for serving the API
 
 Start writing the API: enable URL rewriting
+The front controller: get the resource, ID and the request method
     
