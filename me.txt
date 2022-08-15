@@ -36,4 +36,5 @@ The front controller: get the resource, ID and the request method
 Use a client for API development: cURL, Postman or HTTPie
 Set the HTTP status code: best practices
 Add a controller class to decide the response
+Use Composer's autoloader to load classes automatically
     
