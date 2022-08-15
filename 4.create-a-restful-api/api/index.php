@@ -8,12 +8,14 @@ $resource = $parts[2];
 
 $id = $parts[3] ?? null;
 
-echo $resource, ", ", $id;
-
-echo $_SERVER["REQUEST_METHOD"];
-
 if ($resource != "tasks") {
     
     http_response_code(404);
     exit;
 }
+
+require dirname(__DIR__) . "/src/TaskController.php";
+
+$controller = new TaskController;
+
+$controller->processRequest($_SERVER['REQUEST_METHOD'], $id);
