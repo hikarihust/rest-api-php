@@ -28,4 +28,28 @@ class TaskGateway
 
         return $data;
     }
+
+    public function get(string $id): array
+    {
+        $sql = "SELECT *
+                FROM task
+                WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($data !== false) {
+
+            $data['is_completed'] = (bool) $data['is_completed'];
+        } else {
+            return [];
+        }
+
+        return $data;
+    }
 }
