@@ -51,4 +51,5 @@ Connect to the database from PHP: add a Database class
 Move the database connection data to a separate .env file
 Create a table data gateway class for the resource table
 Show a list of all records
+Configure PDO to prevent numeric values from being converted to strings
     
