@@ -40,4 +40,10 @@ Use Composer's autoloader to load classes automatically
 Make debugging easier: add type declarations and enable strict type checking
 Always return JSON: add a generic exception handler and JSON Content-Type header
 Send a 405 status code and Allow header for invalid request methods
+
+    ================================================================================
+
+                    Create a RESTful API: create a database and retrieve data from it
+    
+Create a new database and a database user to access it
     
