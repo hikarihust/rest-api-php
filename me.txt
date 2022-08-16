@@ -49,4 +49,5 @@ Create a new database and a database user to access it
 Create a table to store resource data
 Connect to the database from PHP: add a Database class
 Move the database connection data to a separate .env file
+Create a table data gateway class for the resource table
     
