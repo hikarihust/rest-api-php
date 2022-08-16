@@ -15,7 +15,7 @@ class TaskController
 
             if ($method == "GET") {
 
-                echo json_encode("index");
+                echo json_encode($this->gateway->getAll());
             } elseif ($method == "POST") {
 
                 echo json_encode("create");
