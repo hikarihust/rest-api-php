@@ -48,4 +48,5 @@ Send a 405 status code and Allow header for invalid request methods
 Create a new database and a database user to access it
 Create a table to store resource data
 Connect to the database from PHP: add a Database class
+Move the database connection data to a separate .env file
     
