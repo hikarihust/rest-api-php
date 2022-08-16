@@ -8,25 +8,25 @@ class TaskController
 
             if ($method == "GET") {
 
-                echo "index";
+                echo json_encode("index");
             } elseif ($method == "POST") {
 
-                echo "create";
+                echo json_encode("create");
             }
         } else {
 
             switch ($method) {
 
                 case "GET":
-                    echo "show $id";
+                    echo json_encode("show $id");
                     break;
 
                 case "PATCH":
-                    echo "update $id";
+                    echo json_encode("update $id");
                     break;
 
                 case "DELETE":
-                    echo "delete $id";
+                    echo json_encode("delete $id");
                     break;
             }
         }

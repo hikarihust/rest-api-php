@@ -38,4 +38,5 @@ Set the HTTP status code: best practices
 Add a controller class to decide the response
 Use Composer's autoloader to load classes automatically
 Make debugging easier: add type declarations and enable strict type checking
+Always return JSON: add a generic exception handler and JSON Content-Type header
     
