@@ -56,3 +56,9 @@ Convert database booleans to boolean literals in the JSON
 Show an individual record
 Respond with 404 if the resource with the specified ID is not found
     
+    ================================================================================
+
+                    Create a RESTful API: create, update and delete individual resources
+
+Get the data from the request as JSON
+    
