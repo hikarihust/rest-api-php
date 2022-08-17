@@ -54,4 +54,5 @@ Show a list of all records
 Configure PDO to prevent numeric values from being converted to strings
 Convert database booleans to boolean literals in the JSON
 Show an individual record
+Respond with 404 if the resource with the specified ID is not found
     
