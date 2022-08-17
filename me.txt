@@ -61,4 +61,5 @@ Respond with 404 if the resource with the specified ID is not found
                     Create a RESTful API: create, update and delete individual resources
 
 Get the data from the request as JSON
+Insert a record into the database and respond with a 201 status code
     
