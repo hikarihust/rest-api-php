@@ -62,7 +62,7 @@ class TaskController
                         return;
                     }
 
-                    echo json_encode("update $id");
+                    $this->gateway->update($id, $data);
                     break;
 
                 case "DELETE":

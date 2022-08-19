@@ -65,4 +65,5 @@ Insert a record into the database and respond with a 201 status code
 Add a generic error handler to output warnings as JSON
 Validate the data and respond with a 422 status code if invalid
 Conditionally validate the data when updating an existing record
+Get the data from the request for updating an existing record
     
