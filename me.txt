@@ -63,4 +63,5 @@ Respond with 404 if the resource with the specified ID is not found
 Get the data from the request as JSON
 Insert a record into the database and respond with a 201 status code
 Add a generic error handler to output warnings as JSON
+Validate the data and respond with a 422 status code if invalid
     
