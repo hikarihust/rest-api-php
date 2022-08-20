@@ -74,4 +74,5 @@ Delete the record in the database and return a 200 status code
                     API key authentication
 
 Create a table to store user account data
+Add a register page to insert a new user record and generate a new API key
     
