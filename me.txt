@@ -76,4 +76,5 @@ Delete the record in the database and return a 200 status code
 Create a table to store user account data
 Add a register page to insert a new user record and generate a new API key
 Send the API key with the request: query string or request header
+Check the API key is present in the request and return 400 if not
     

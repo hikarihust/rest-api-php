@@ -26,13 +26,20 @@ if ($resource != "tasks") {
     exit;
 }
 
+header("Content-type: application/json; charset=UTF-8");
+
+if (empty($_SERVER["HTTP_X_API_KEY"])) {
+
+    http_response_code(400);
+    echo json_encode(["message" => "missing API key"]);
+    exit;
+}
+
 $api_key = $_SERVER["HTTP_X_API_KEY"];
 
-echo $api_key;
+echo json_encode($api_key);
 
 exit;
-
-header("Content-type: application/json; charset=UTF-8");
 
 $database = new Database($_ENV["DB_HOST"], $_ENV["DB_NAME"], $_ENV["DB_USER"], $_ENV["DB_PASS"]);
 
