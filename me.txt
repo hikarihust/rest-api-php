@@ -69,3 +69,9 @@ Get the data from the request for updating an existing record
 Update the record in the database and return a 200 status code
 Delete the record in the database and return a 200 status code
     
+    ================================================================================
+
+                    API key authentication
+
+Create a table to store user account data
+    
