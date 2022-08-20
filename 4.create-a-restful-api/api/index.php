@@ -41,9 +41,12 @@ $database = new Database($_ENV["DB_HOST"], $_ENV["DB_NAME"], $_ENV["DB_USER"], $
 
 $user_gateway = new UserGateway($database);
 
-echo json_encode($api_key);
+if ($user_gateway->getByAPIKey($api_key) === []) {
 
-exit;
+    http_response_code(401);
+    echo json_encode(["message" => "invalid API key"]);
+    exit;
+}
 
 $task_gateway = new TaskGateway($database);
 
