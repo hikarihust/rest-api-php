@@ -67,4 +67,5 @@ Validate the data and respond with a 422 status code if invalid
 Conditionally validate the data when updating an existing record
 Get the data from the request for updating an existing record
 Update the record in the database and return a 200 status code
+Delete the record in the database and return a 200 status code
     
