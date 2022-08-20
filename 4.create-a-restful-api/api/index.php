@@ -30,6 +30,11 @@ if (!$auth->authenticateAPIKey()) {
     exit;
 }
 
+$user_id = $auth->getUserID();
+
+echo json_encode($user_id);
+exit;
+
 $task_gateway = new TaskGateway($database);
 
 $controller = new TaskController($task_gateway);
