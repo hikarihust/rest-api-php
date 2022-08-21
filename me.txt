@@ -82,4 +82,5 @@ Authenticate the API key and return a 401 status code if invalid
 Refactor the front controller to a bootstrap file and Auth class
 Add a foreign key relationship to link task records to user records
 Retrieve the ID of the authenticated user when authenticating
+Restrict the tasks index endpoint to only show the authenticated user's tasks
     
