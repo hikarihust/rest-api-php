@@ -6,6 +6,7 @@ class Database
     private $name;
     private $user;
     private $password;
+    private $conn = null;
 
     public function __construct(
         string $host,
@@ -21,12 +22,16 @@ class Database
 
     public function getConnection(): PDO
     {
-        $dsn = "mysql:host={$this->host};dbname={$this->name};charset=utf8";
+        if ($this->conn === null) {
+            $dsn = "mysql:host={$this->host};dbname={$this->name};charset=utf8";
 
-        return new PDO($dsn, $this->user, $this->password, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_EMULATE_PREPARES => false,
-            PDO::ATTR_STRINGIFY_FETCHES => false
-        ]);
+            $this->conn = new PDO($dsn, $this->user, $this->password, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES => false,
+                PDO::ATTR_STRINGIFY_FETCHES => false
+            ]);
+        }
+
+        return $this->conn;
     }
 }
