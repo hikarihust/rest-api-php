@@ -34,15 +34,17 @@ class TaskGateway
         return $data;
     }
 
-    public function get(string $id): array
+    public function getForUser(int $user_id, string $id): array
     {
         $sql = "SELECT *
                 FROM task
-                WHERE id = :id";
+                WHERE id = :id
+                AND user_id = :user_id";
 
         $stmt = $this->conn->prepare($sql);
 
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 
         $stmt->execute();
 
@@ -58,10 +60,10 @@ class TaskGateway
         return $data;
     }
 
-    public function create(array $data): string
+    public function createForUser(int $user_id, array $data): string
     {
-        $sql = "INSERT INTO task (name, priority, is_completed)
-                VALUES (:name, :priority, :is_completed)";
+        $sql = "INSERT INTO task (name, priority, is_completed, user_id)
+                VALUES (:name, :priority, :is_completed, :user_id)";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -80,13 +82,14 @@ class TaskGateway
             $data["is_completed"] ?? false,
             PDO::PARAM_BOOL
         );
+        $stmt->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 
         $stmt->execute();
 
         return $this->conn->lastInsertId();
     }
 
-    public function update(string $id, array $data): int
+    public function updateForUser(int $user_id, string $id, array $data): int
     {
         $fields = [];
 
@@ -126,11 +129,13 @@ class TaskGateway
 
             $sql = "UPDATE task"
                 . " SET " . implode(", ", $sets)
-                . " WHERE id = :id";
+                . " WHERE id = :id"
+                . " AND user_id = :user_id";
 
             $stmt = $this->conn->prepare($sql);
 
             $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+            $stmt->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 
             foreach ($fields as $name => $values) {
 
@@ -143,14 +148,16 @@ class TaskGateway
         }
     }
 
-    public function delete(string $id): int
+    public function deleteForUser(int $user_id, string $id): int
     {
         $sql = "DELETE FROM task
-                WHERE id = :id";
+                WHERE id = :id
+                AND user_id = :user_id";
 
         $stmt = $this->conn->prepare($sql);
 
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 
         $stmt->execute();
 
