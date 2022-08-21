@@ -91,4 +91,5 @@ Cache the database connection to avoid multiple connections in the same request
                     An introduction to authentication using access tokens
 
 An introduction to authentication using access tokens
+Create the login script and return 400 if the username and password are missing
     
