@@ -85,4 +85,10 @@ Retrieve the ID of the authenticated user when authenticating
 Restrict the tasks index endpoint to only show the authenticated user's tasks
 Restrict the rest of the task endpoints to the authenticated user's tasks
 Cache the database connection to avoid multiple connections in the same request
+
+    ================================================================================
+
+                    An introduction to authentication using access tokens
+
+An introduction to authentication using access tokens
     
