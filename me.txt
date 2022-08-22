@@ -94,4 +94,5 @@ An introduction to authentication using access tokens
 Create the login script and return 400 if the username and password are missing
 Select the user record based on the username in the request
 Check the username and password and return a 401 status code if invalid
+Generate an encoded access token containing the user details
     
