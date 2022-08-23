@@ -24,6 +24,10 @@ $database = new Database($_ENV["DB_HOST"], $_ENV["DB_NAME"], $_ENV["DB_USER"], $
 
 $user_gateway = new UserGateway($database);
 
+echo json_encode($_SERVER["HTTP_AUTHORIZATION"]);
+
+exit;
+
 $auth = new Auth($user_gateway);
 
 if (!$auth->authenticateAPIKey()) {
