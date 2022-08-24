@@ -104,4 +104,5 @@ Get the authenticated user data from the access token
                     Authentication using JSON Web Tokens (JWTs)
 
 An introduction to JSON web tokens (JWTs)
+Create a class to encode a payload in a JWT
     
