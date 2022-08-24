@@ -98,4 +98,10 @@ Generate an encoded access token containing the user details
 Pass the access token to the task API endpoints in the authorization header
 Validate the access token and decode its contents
 Get the authenticated user data from the access token
+
+    ================================================================================
+
+                    Authentication using JSON Web Tokens (JWTs)
+
+An introduction to JSON web tokens (JWTs)
     
