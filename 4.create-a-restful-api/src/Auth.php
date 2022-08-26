@@ -4,10 +4,12 @@ class Auth
 {
     private $user_gateway;
     private $user_id;
+    private $codec;
 
-    public function __construct(UserGateway $user_gateway)
+    public function __construct(UserGateway $user_gateway, JWTCodec $codec)
     {
         $this->user_gateway = $user_gateway;
+        $this->codec = $codec;
     }
 
     public function authenticateAPIKey(): bool
@@ -48,25 +50,16 @@ class Auth
             return false;
         }
 
-        $plain_text = base64_decode($matches[1], true);
-
-        if ($plain_text === false) {
+        try {
+            $data = $this->codec->decode($matches[1]);
+        } catch (Exception $e) {
 
             http_response_code(400);
-            echo json_encode(["message" => "invalid authorization header"]);
+            echo json_encode(["message" => $e->getMessage()]);
             return false;
         }
 
-        $data = json_decode($plain_text, true);
-
-        if ($data === null) {
-
-            http_response_code(400);
-            echo json_encode(["message" => "invalid JSON"]);
-            return false;
-        }
-
-        $this->user_id = $data["id"];
+        $this->user_id = $data["sub"];
 
         return true;
     }
