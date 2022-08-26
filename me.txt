@@ -106,4 +106,5 @@ Get the authenticated user data from the access token
 An introduction to JSON web tokens (JWTs)
 Create a class to encode a payload in a JWT
 Generate a JWT access token in the login endpoint containing JWT claims
+Add a method to decode the payload from the JWT
     
