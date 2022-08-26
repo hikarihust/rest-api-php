@@ -107,4 +107,5 @@ An introduction to JSON web tokens (JWTs)
 Create a class to encode a payload in a JWT
 Generate a JWT access token in the login endpoint containing JWT claims
 Add a method to decode the payload from the JWT
+Pass in the secret key used for hashing as a dependency
     

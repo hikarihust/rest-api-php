@@ -55,7 +55,7 @@ $payload = [
     "name" => $user["name"]
 ];
 
-$codec = new JWTCodec;
+$codec = new JWTCodec($_ENV["SECRET_KEY"]);
 $access_token = $codec->encode($payload);
 
 echo json_encode([
