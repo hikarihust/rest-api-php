@@ -118,4 +118,5 @@ Use a custom exception class to return 401 if the signature is invalid
 Add an expiry claim to the access token payload when logging in
 Throw a custom exception to not accept the JWT if it has expired
 Issue a refresh token in addition to the access token when logging in
+Add a refresh endpoint and validate the refresh token in the request
     
