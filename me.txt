@@ -109,4 +109,5 @@ Generate a JWT access token in the login endpoint containing JWT claims
 Add a method to decode the payload from the JWT
 Pass in the secret key used for hashing as a dependency
 Authenticate the task endpoints using the JWT
+Use a custom exception class to return 401 if the signature is invalid
     
