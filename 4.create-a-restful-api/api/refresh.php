@@ -53,4 +53,4 @@ if ($user === []) {
     exit;
 }
 
-echo json_encode($user);
+require __DIR__ . "/tokens.php";

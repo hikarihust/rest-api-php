@@ -120,4 +120,5 @@ Throw a custom exception to not accept the JWT if it has expired
 Issue a refresh token in addition to the access token when logging in
 Add a refresh endpoint and validate the refresh token in the request
 Validate the user in the refresh token using the database
+Issue a new access token and refresh token to the authenticated user
     
