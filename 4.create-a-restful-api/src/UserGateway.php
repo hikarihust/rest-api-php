@@ -52,4 +52,26 @@ class UserGateway
 
         return $data;
     }
+
+    public function getByID(int $id): array
+    {
+        $sql = "SELECT *
+                FROM user
+                WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($data == false) {
+
+            return [];
+        }
+
+        return $data;
+    }
 }

@@ -35,4 +35,22 @@ try {
 
 $user_id = $payload["sub"];
 
-echo json_encode($user_id);
+$database = new Database(
+    $_ENV["DB_HOST"],
+    $_ENV["DB_NAME"],
+    $_ENV["DB_USER"],
+    $_ENV["DB_PASS"]
+);
+
+$user_gateway = new UserGateway($database);
+
+$user = $user_gateway->getByID($user_id);
+
+if ($user === []) {
+
+    http_response_code(401);
+    echo json_encode(["message" => "invalid authentication"]);
+    exit;
+}
+
+echo json_encode($user);
