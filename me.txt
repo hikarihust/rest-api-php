@@ -123,4 +123,5 @@ Validate the user in the refresh token using the database
 Issue a new access token and refresh token to the authenticated user
 Create a table to store a refresh token whitelist
 Store the refresh token in the whitelist when issued in the login endpoint
-    
+Replace the refresh token in the whitelist when issued in the refresh endpoint
+     
