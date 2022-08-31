@@ -126,4 +126,5 @@ Store the refresh token in the whitelist when issued in the login endpoint
 Replace the refresh token in the whitelist when issued in the refresh endpoint
 Validate the refresh token is on the whitelist and return a 400 response if not
 Add a logout endpoint to remove the an active refresh token from the whitelist
+Add a script to clear out expired refresh tokens from the whitelist
     

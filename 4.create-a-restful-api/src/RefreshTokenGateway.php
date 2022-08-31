@@ -65,4 +65,14 @@ class RefreshTokenGateway
 
         return $data['token_hash'];
     }
+
+    public function deleteExpired(): int
+    {
+        $sql = "DELETE FROM refresh_token
+                WHERE expires_at < UNIX_TIMESTAMP()";
+
+        $stmt = $this->conn->query($sql);
+
+        return $stmt->rowCount();
+    }
 }
