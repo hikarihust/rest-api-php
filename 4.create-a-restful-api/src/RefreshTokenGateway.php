@@ -41,4 +41,28 @@ class RefreshTokenGateway
 
         return $stmt->rowCount();
     }
+
+    public function getByToken(string $token): string
+    {
+        $hash = hash_hmac("sha256", $token, $this->key);
+
+        $sql = "SELECT *
+                FROM refresh_token
+                WHERE token_hash = :token_hash";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindValue(":token_hash", $hash, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($data == false) {
+
+            return '';
+        }
+
+        return $data['token_hash'];
+    }
 }
